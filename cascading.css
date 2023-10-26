@@ -1,0 +1,6 @@
+p{color: aliceblue;}
+div p {color: aqua;}
+kelas1{color: yellow;}
+p.kelas1{color: brown;}
+p#id1{color: blue;}
+*.kelas1 div p{color: cadetblue;}
