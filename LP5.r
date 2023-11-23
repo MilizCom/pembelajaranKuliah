@@ -1,6 +1,27 @@
-data <- sort(sample(22:98, 70, replace = TRUE, prob = NULL))
 # pdata= c(41,45,49,52,52,53,55,56,63,57,57,58,59,60,61,67,62,56,63,35,65,65,65,67,67,73,61,69,69,96,69,70,71,71,71,77,79,73,93,73,81,75,75,77,77,89,67,79,79,81,59,83,83,87,89,71,92,81,65,84,73)
 # data =sort(pdata)
+# n=length(data)
+# q1=n/4
+# q2=n/2
+# q3=3*n/4
+# bq1=52.5
+# bq3=70.5
+# fkq1=6
+# fkq3=33
+# fq1=12
+# fq3=15
+
+
+# print(q1)
+# print(q2) 
+# print(q3)
+# print(n)
+# print(data)
+
+
+
+data <-sort( sample(16:100, 100, replace = TRUE))
+
 k <- 1 + (3.3 * log10(length(data)))
 k <- round(k)
 j <- max(data) - min(data)
@@ -48,66 +69,78 @@ tabel_frekuensi <- data.frame(
 print("Tabel Frekuensi:")
 print(tabel_frekuensi)
 
+lq1<-length(data)/4
+lq2<-length(data)/2
+lq3<-(3*length(data))/4
 
-m=sum(data)/length(data)
-print("mean = ")
-print(m)
 
-z=ttengah*frek
-print("z = ")
-print(z)
-
-z=sum(ttengah*frek)
-print("z = ")
-print(z)
-
-me= z/length(data)
-print("me = ")
-print(me)
-
-median=(length(data)/2)
-print("med = ")
-print(median)
+print("lq1 : ")
+print(lq1)
+print("lq2 : ")
+print(lq2)
+print("lq3 : ")
+print(lq3)
 
 cek <- 0
-fm <- 0
-bm <- 0
-fkm <- 0
-d1 <- 0
-d2 <- 0
+bq1 <- 0
+bq3 <- 0
+fkq1 <- 0
+fkq3 <- 0
+fq1 <- 0
+fq3 <- 0
 bol <- TRUE
 
 for (i in 1:length(frek)) {
   cek <- cek + frek[i]
-  if (cek >= median && bol == TRUE) {
-    fm <- frek[i]
-    bm <- kelasA[i] - 0.5
-    print(bm)
-    fkm <- cek - frek[i]
+  if (cek > lq1 && bol == TRUE) {
+    fq1 <- frek[i]
+    bq1 <- kelasA[i] - 0.5
+    fkq1 <- cek - frek[i]
     bol <- FALSE
-    d1 <- frek[i] - frek[i - 1]
-    d2 <- frek[i] - frek[i + 1]
+    break
+  }
+}
+
+print("fq1 : ")
+print(fq1)
+print("bq1 : ")
+print(bq1)
+print("fkq1 : ")
+print(fkq1)
+bol <- TRUE
+
+for (i in 1:length(frek)) {
+  cek <- cek + frek[i]
+  if (cek > lq3 && bol == TRUE) {
+    fq3 <- frek[i]
+    bq3 <- kelasA[i] - 0.5
+    fkq3 <- cek - frek[i]
+    bol <- FALSE
     break
   }
 }
 
 
-print("fkm = ")
-print(fkm)
+print("fq3 : ")
+print(fq3)
+print("bq3 : ")
+print(bq3)
+print("fkq3 : ")
+print(fkq3)
 
-print("fm = ")
-print(fm)
+q1<-bq1+(interval*(((length(data)/4)-fkq1))/fq1)
+q3<-bq3+(interval*(((3*length(data)/4)-fkq3))/fq3)
 
-print("bm = ")
-print(bm)
+print("quartil 1 : ")
+print(q1)
 
-md<-round(bm+(interval*((((length(data)/2)-fkm)/fm))))
-print("median = ")
-print(md)
+print("quartil 3 : ")
+print(q3)
+d<-0
+for (i in 1:10) {
+  d[i]<-(i*length(data))/10
+  cat("decil ke : ",i)
+  print(d[i])
+}
 
-mo<-round(bm+(interval*(d1/(d1-d2))))
-print("modus = ")
-print(mo)
-
-print("Data:")
 print(data)
