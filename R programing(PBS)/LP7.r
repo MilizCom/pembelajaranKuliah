@@ -53,7 +53,7 @@ v=function(x)
 }
 
 varians=function(x,y,z){
-    print(sum(((x-mean(y))^2))*z)/(length(y)-1)
+    print(sum(((x-mean(y))^2)*z)/(length(y)-1))
 }
 sb=function(x){
     sqrt(sum(x-mean(x))^2)/(length(x)-1)
@@ -70,7 +70,7 @@ SB=(sb(data))
 print(SB) 
 
 print("varian Berkelompok = ")
-varians(V,ttengah,data)
+varians(ttengah,data,frek)
 
 print("simpangan baku Berkelompok = ")
-smb(SB,ttengah,data)
+smb(ttengah,data,frek)

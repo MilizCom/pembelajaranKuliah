@@ -52,7 +52,7 @@ persentil <- numeric(0)
 
 # Calculate percentiles for each iteration
 for (i in 1:100) {
-    p <- ((i  * (n + 1)) / 100)
+    p <- (i*(n)/100)
     persentil <- c(persentil, p)
 }
 
@@ -80,23 +80,14 @@ for (i in 1:100) {
 }
 print("Persentil ke-r:")
 print(pk)
-mean=mean(data)
-md <-sum(abs(data - mean)) / n
-print ("deviasi rata 2 tunggal: ")
-print(md)
+deviasi<-function(x){
+  print((sum(abs(x-mean(x))))/length(x))
+}
+print("deviasi rata-rata tunggal : ")
+deviasi(data)
 
-fi = sum(frek)
-xi=sum(ttengah)
-meanV=xi/fi
-print("fi :")
-print(fi)
-print("xi :")
-print(xi)
-print("meanV =")
-print(meanV)
-
-mdk<-sum(fi * (xi - meanV)) / length(data)
-
-print ("deviasi rata 2 kelompok:  ")
-print(mdk)
-
+deviasiK<- function(x,y,z){
+  print(sum(abs(x-mean(y))*z)/length(y))
+}
+print("deviasi rata-rata berkelompok : ")
+deviasiK(ttengah,data,frek)
