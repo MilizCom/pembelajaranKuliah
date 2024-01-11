@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Intan & Eko</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="index.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZFscfxqp93-abgaodgkuV_9D4FRJiFyE&callback=initMap"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <audio id="backgroundMusic" loop>
+      <source
+        src="Shane Filan - Beautiful In White (Lyrics).mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <!------------------------- NAVIGASI ------------------------->
+    <nav class="navbar">
+      <div class="navbar_wrapper">
+        <h1 class="brand">Intan & Eko</h1>
+        <menu class="navbar_menu">
+          <a href="#akad">Akad</a>
+          <a href="#resepsi">Resepsi</a>
+          <a href="#buku_tamu ">Buku Tamu</a>
+          <a href="#map">Map</a>
+          <a href="#gallery">Gallery</a>
+        </menu>
+      </div>
+    </nav>
+    <!------------------------- END NAVIGASI ------------------------->
+
+    <!------------------------- HERO ------------------------->
+    <div class="hero">
+      <h2>Pernikahan</h2>
+      <h1>Intan & Eko</h1>
+      <h3>Demak, 24 April 2024</h3>
+      <h4>Count Down</h4>
+      <div id="countdown"></div>
+    </div>
+    <!------------------------- END HERO ------------------------->
+
+    <!------------------------- SECTION AKAD ------------------------->
+    <section id="akad">
+      <div class="bingkai">
+        <div class="line"></div>
+        <h1>Akad</h1>
+        <div class="line"></div>
+      </div>
+      <div class="section_wrap wrap">
+        <div class="section_container_akad container">
+          <h3>Sabtu, 25 April 2024</h3>
+          <h3>Pukul: 08.00 WIB</h3>
+          <h4>Jl. Letkol Subadri No 45 Demak</h4>
+          <h4>Yogyakarta</h4>
+        </div>
+        <section class="akad_img"></section>
+      </div>
+    </section>
+    <!------------------------- END SECTION AKAD ------------------------->
+    <div class="bouquet_container">
+      <img
+        class="bouquet"
+        src="https://cdn.pixabay.com/photo/2020/09/01/18/13/background-5535928_960_720.png"
+        alt=""
+      />
+    </div>
+
+    <!------------------------- SECTION RESEPSI ------------------------->
+    <section id="resepsi">
+      <div class="bingkai">
+        <div class="line"></div>
+        <h1>Resepsi</h1>
+        <div class="line"></div>
+      </div>
+      <div class="section_wrap wrap">
+        <section class="resepsi_img"></section>
+        <div class="section_container_resepsi">
+          <h3>Sabtu, 24 September 2022</h3>
+          <h3>Pukul: 09.00 WIB s/d selesai</h3>
+          <h4>Jl. Letkol Subadri No 45 Sleman</h4>
+          <h4>Yogyakarta</h4>
+        </div>
+      </div>
+    </section>
+    <!------------------------- END SECTION RESEPSI ------------------------->
+
+    <img
+      class="bouquet2"
+      src="https://cdn.pixabay.com/photo/2016/06/27/14/42/flowers-1482644_960_720.png"
+      alt=""
+    />
+
+    <!------------------------- SECTION BUKU TAMU ------------------------->
+    <section id="buku_tamu">
+      <div class="bingkai">
+        <div class="line"></div>
+        <h1>Buku Tamu</h1>
+        <div class="line"></div>
+      </div>
+      <div class="buku_tamu_container">
+        <form action="">
+          <input required type="text" placeholder="Nama" />
+          <textarea
+            name="ucapan"
+            placeholder="Ucapan & Doa"
+            cols="30"
+            rows="8"
+          ></textarea>
+          <select name="kehadiran">
+            <option value="hadir">Hadir</option>
+            <option value="tidak_hadir">Tidak Hadir</option>
+          </select>
+
+          <div class="btn">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!------------------------- END SECTION BUKU TAMU ------------------------->
+
+    <!------------------------- SECTION MAP ------------------------->
+    <section id="map">
+      <div class="bingkai">
+        <div class="line"></div>
+        <h1>Map</h1>
+        <div class="line"></div>
+      </div>
+      <div class="section_wrap wrap">
+        <div class="section_container_map">
+          <div id="map"></div>
+          <button class="map_list">
+            <span class="material-symbols-outlined"> location_on </span>
+            Dapatkan Lokasi
+          </button>
+          <button class="map_list">
+            <span class="material-symbols-outlined"> calendar_month </span>
+            Save ke Calender
+          </button>
+          <button class="map_list">
+            <span class="material-symbols-outlined"> share </span>
+            Share Instagram
+          </button>
+        </div>
+      </div>
+    </section>
+    <!------------------------- END SECTION MAP ------------------------->
+
+    <!------------------------- SECTION GALLERY ------------------------->
+    <section id="gallery">
+      <div class="bingkai">
+        <div class="line"></div>
+        <h1>Gallery</h1>
+        <div class="line"></div>
+      </div>
+      <div class="selector_wrapper">
+        <div class="gallery_list">
+          <img src="download (1).jpeg" alt="gallery" />
+          <img
+            src="https://images.unsplash.com/photo-1623428454614-abaf00244e52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          />
+          <img src="iya.jpeg" alt="gallery" />
+          <img
+            src="https://images.unsplash.com/photo-1525328302834-764f32276842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+            alt="gallery"
+          />
+          <img src="Snt_fotografer.jpeg" alt="gallery" />
+        </div>
+        <div class="gallery_list">
+          <img
+            src="https://images.unsplash.com/photo-1582738412147-d29ca77b95cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          />
+          <img
+            src="https://images.pexels.com/photos/2970287/pexels-photo-2970287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="gallery"
+          />
+          <img src="download.jpeg" alt="gallery" />
+          <img
+            src="https://images.unsplash.com/photo-1509927083803-4bd519298ac4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            alt="gallery"
+          />
+        </div>
+      </div>
+    </section>
+    <!------------------------- END SECTION GALLERY ------------------------->
+
+    <!------------------------- FOOTER ------------------------->
+    <footer>
+      <h3>Kedua Mempelai</h3>
+    </footer>
+    <!------------------------- END FOOTER ------------------------->
+  </body>
+</html>
